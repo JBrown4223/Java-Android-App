@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww14000\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Reflection - Jonathan Brown - 135918175\
+\
+How did you implement this project: what are the main classes and their functionality?\
+\
+AppDatabase \
+	- Creates instance on the database and the DAO\
+\
+CarAdapter \
+	- This class checks the database for cars coming from the api\
+	- It generates a listView\
+	- OnClick it will bring up an alert box which will add the selected car to the database on the device\
+\
+CarDAO \
+	- defines the methods used to access data in the database\
+\
+CarsEntity\
+	- The Database object being stored in the RoomDB\
+	- There are setters and getters for Make, Model, Year, and UID\
+\
+DatabaseClient\
+	- The class manages the usage of database instances\
+	-There a two methods insert and remove which call the DAO methods to insert and delete entries from the RoomDB\
+\
+JSON_Car\
+	-  This class is used to format the API JSON into a Java Object that the adapter can use \
+	- There are setter and getter methods for each data type\
+\
+MainActivity\
+	- This class creates an instance of the Network object for the purposes of returning a List of JSON_Car objects\
+	- It takes that list of objects and sends it to the adapter to generate the listView\
+\
+Network\
+	-This class uses a httpUrlConnection to call out to the API \
+	-Then a buffer reads line by line and places them into one long  String\
+	-Then the string is broken up into a JSON Array which is then extracted into a List of JSON_Car  objects	\
+\
+How the data transferred in your app?\
+\
+	-The data is transferred using an http connection and an input stream  that reads the incoming data line by line and and String buffer puts it into a string. Then the string is put into a JSONArray which extracts the data into a workable object. \
+\
+What did you learn from this project?\
+	- I learned how to fetch data from an api and convert it into a usable object.\
+	- I learned how to create a button that changes images onClick\
+	}
